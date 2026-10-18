@@ -6,7 +6,7 @@ from datetime import datetime
 
 # 設定網頁標題與排版
 st.set_page_config(
-    page_title="周K MACD 自選股回測器 (受保護)",
+    page_title="周K 自選股回測器 (受保護)",
     page_icon="📈",
     layout="wide"
 )
@@ -24,7 +24,7 @@ def check_password():
     if "password_correct" not in st.session_state:
         st.title("🔒 系統安全驗證")
         st.text_input(
-            "請輸入密碼以存取周K MACD 回測器：",
+            "請輸入密碼以存取周K 自選股回測器：",
             type="password",
             on_change=password_entered, 
             key="password"
@@ -33,7 +33,7 @@ def check_password():
     elif not st.session_state["password_correct"]:
         st.title("🔒 系統安全驗證")
         st.text_input(
-            "請輸入密碼以存取周K MACD 回測器：",
+            "請輸入密碼以存取周K 自選股回測器：",
             type="password",
             on_change=password_entered, 
             key="password"
@@ -124,8 +124,8 @@ if check_password():
             return None, str(e)
 
     # --- App 主介面 ---
-    st.title("📈 周K MACD 紅增自選股回測器")
-    st.write("設定您的自選股名單與回測區間，檢驗『周K MACD紅柱連續增長買入，縮短/轉綠賣出』之策略績效！")
+    st.title("📈 周K 自選股回測器")
+    st.write("設定您的自選股名單與回測區間，檢驗策略績效！")
 
     # 側邊欄設定
     st.sidebar.header("⚙️ 回測參數設定")
